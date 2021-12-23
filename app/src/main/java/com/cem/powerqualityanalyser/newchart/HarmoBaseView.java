@@ -95,7 +95,7 @@ public class HarmoBaseView extends MPChartBaseView implements OnChartValueSelect
         XAxis xAxis = harmonicsbarchart.getXAxis();
         xAxis.setTypeface(tfLight);
         xAxis.setGranularity(1f);
-        xAxis.setCenterAxisLabels(true);
+//        xAxis.setCenterAxisLabels(true);
 
 
         YAxis leftAxis = harmonicsbarchart.getAxisLeft();

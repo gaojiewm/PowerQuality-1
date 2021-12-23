@@ -109,6 +109,10 @@ public class HarmoView extends HarmoBaseView {
             }
         }
         harmonicsbarchart.invalidate();
+
+
+        List<ModelLineData> modelLineData = new ArrayList<>();
+        setShowMeterData3(modelLineData,0,0,0);
     }
 
     private int wir_index;
@@ -238,7 +242,7 @@ public class HarmoView extends HarmoBaseView {
         XAxis xAxis = chart.getXAxis();
         xAxis.setTypeface(tfLight);
         xAxis.setGranularity(1f);
-        xAxis.setCenterAxisLabels(true);
+//        xAxis.setCenterAxisLabels(true);
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {
@@ -683,6 +687,11 @@ public class HarmoView extends HarmoBaseView {
         int endYear = startYear + groupCount;
 
         float randomMultiplier = 60;
+        for (int i = startYear; i < endYear; i++) {
+            values1.add(new BarEntry(i, (float) (Math.random() * randomMultiplier)));
+            values2.add(new BarEntry(i, (float) (Math.random() * randomMultiplier)));
+            values3.add(new BarEntry(i, (float) (Math.random() * randomMultiplier)));
+            values4.add(new BarEntry(i, (float) (Math.random() * randomMultiplier)));}
         if (chooseUserFullModeList.size() >= groupCount) {
             for (int i = startYear; i < endYear; i++) {
                 values1.add(new BarEntry(i, (float) (Math.random() * randomMultiplier)));
